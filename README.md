@@ -11,7 +11,6 @@ $ clone.io https://github.com/benatkin
 Getting user data...
 $ cd benatkin
 $ ls -A1p
-.git
 benatkin.yml
 clone.yml
 $ vi benatkin.yml  # change bio
