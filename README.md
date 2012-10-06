@@ -32,6 +32,22 @@ code/
 json2js.yml
 ```
 
+# clone.yml
+
+At a minimum, `clone.yml` contains a `url` property, that can be used
+to fetch more data. Another thing it may contain is the username
+needed to update the data.
+
+As a general rule there will be one `clone.yml` file for each resource
+that needs to be uniquely identified. For example, a github user and
+an individual github repository would have a `clone.yml` field, but
+the repos for a github user wouldn't, because if you know the API url
+for a github user you can use that to find the API url for the repos.
+
+Any directory containing clone.yml ought to be relocatable. That way
+two clone directories for resources on different services can exist
+in the same parent directory.
+
 # status
 
 Not yet implemented. Needs at least one child service implemented
