@@ -8,7 +8,7 @@ filesystem.
 ``` bash
 $ npm install -g clone.io
 $ clone.io https://github.com/resources/clone.io
-Getting user data...
+Getting https://api.github.com/repos/resources/clone.io...
 $ cd clone.io
 $ ls -A1p
 project.yml
@@ -17,14 +17,14 @@ $ vi project.yml  # change description
 $ clone.io status
 benatkin.yml modified; push with clone.io push benatkin
 $ clone.io push benatkin
-Patching https://github.com/resources/clone.io...
+Patching https://api.github.com/repos/resources/clone.io...
 Enter GitHub username:
 Enter GitHub password:
 Patching...
 $ clone.io list issues  # list the issues
 <snip>
 $ clone.io get issue 1
-Getting issue 1: implement cloning a public github project...
+Getting https://api.github.com/repos/resources/clone.io/issues/1...
 $ ls issues/
 1-implement-cloning-a-public-github-project.yml
 ```
