@@ -1,7 +1,7 @@
 # clone.io
 
-A tool for cloning resources and their subresources, and operating on
-them (both the clones and the origins) in a manner similar to git.
+A way to work with remote data using your own tools on your own
+filesystem.
 
 # synopsis
 
