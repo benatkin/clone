@@ -7,29 +7,26 @@ filesystem.
 
 ``` bash
 $ npm install -g clone.io
-$ clone.io https://github.com/benatkin
+$ clone.io https://github.com/resources/clone.io
 Getting user data...
-$ cd benatkin
+$ cd clone.io
 $ ls -A1p
-benatkin.yml
+project.yml
 clone.yml
-$ vi benatkin.yml  # change bio
+$ vi project.yml  # change description
 $ clone.io status
 benatkin.yml modified; push with clone.io push benatkin
 $ clone.io push benatkin
-Are you benatkin? (y/n) y
-Getting authenticated user record...
-Enter password for user benatkin:
-Patching authenticated user record...
-$ clone.io list repos  # list most recent repos
+Patching https://github.com/resources/clone.io...
+Enter GitHub username:
+Enter GitHub password:
+Patching...
+$ clone.io list issues  # list the issues
 <snip>
-$ clone.io get json2js
-Getting repo data...
-Getting repo code...
-$ ls -A1p json2js/
-clone.yml
-code/
-json2js.yml
+$ clone.io get issue 1
+Getting issue 1: implement cloning a public github project...
+$ ls issues/
+1-implement-cloning-a-public-github-project.yml
 ```
 
 # clone.yml
@@ -50,14 +47,7 @@ in the same parent directory.
 
 # status
 
-Not yet implemented. Needs at least one child service implemented
-first.
-
-# todo
-
-* Keep the services and the commands separate
-* Implement a child service
-* Implement integration
+Not yet implemented. Starting with github project data.
 
 # license
 
