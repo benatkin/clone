@@ -14,9 +14,7 @@ $ ls -A1p
 project.yml
 clone.yml
 $ vi project.yml  # change description
-$ clone.io status
-benatkin.yml modified; push with clone.io push benatkin
-$ clone.io push benatkin
+$ clone.io push project.yml
 Patching https://api.github.com/repos/resources/clone.io...
 Enter GitHub username:
 Enter GitHub password:
