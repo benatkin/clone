@@ -6,7 +6,7 @@ var expect = require('chai').expect
 function runCloneio(args, callback) {
   var args = [binPath].concat(args)
     , child = child_process.spawn('node', args)
-    , output = { stdout: '', stderr: '', combinded: '' };
+    , output = { stdout: '', stderr: '', combined: '' };
   for (var streamName in {stdout: null, stderr: null}) {
     (function(stream, streamName) {
       stream.setEncoding('utf8');
@@ -23,9 +23,13 @@ function runCloneio(args, callback) {
 
 describe('cli', function() {
   it("should execute the script", function(done) {
+    runCloneio([], function(code, output) {
+      expect(output.combined).to.not.match(/cannot find module/i);
+      done();
+    })
   });
 
-  it("should print a usage message when no argument is given", function(done) {
+  xit("should print a usage message when no argument is given", function(done) {
     var child = child_process.spawn('node', [binPath, 'https://github.com/resources/clone.io']);
     child.on('exit', function(code) {
       expect(code).to.equal(0);
@@ -33,7 +37,7 @@ describe('cli', function() {
     });
   });
   
-  it("should accept a url as the first argument", function(done) {
+  xit("should accept a url as the first argument", function(done) {
     var child = child_process.spawn('node', [binPath, 'https://github.com/resources/clone.io']);
     child.on('exit', function(code) {
       expect(code).to.equal(0);
