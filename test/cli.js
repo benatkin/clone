@@ -31,10 +31,14 @@ describe('cli', function() {
 
   it("should print a usage message when no argument is given", function(done) {
     var child = child_process.spawn('node', [binPath, 'https://github.com/resources/clone.io']);
-    child.on('exit', function(code) {
-      expect(code).to.match(/usage/i);
+    runCloneio([], function(code, output) {
+      expect(output.combined).to.match(/usage/i);
       done();
     });
+  });
+
+  it("should have the bin script in the package", function() {
+    expect(require('../package')).to.have.property('bin');
   });
   
   xit("should accept a url as the first argument", function(done) {
