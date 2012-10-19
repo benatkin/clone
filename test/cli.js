@@ -30,7 +30,6 @@ describe('cli', function() {
   });
 
   it("should print a usage message when no argument is given", function(done) {
-    var child = child_process.spawn('node', [binPath, 'https://github.com/resources/clone.io']);
     runCloneio([], function(code, output) {
       expect(output.combined).to.match(/usage/i);
       done();
@@ -41,10 +40,9 @@ describe('cli', function() {
     expect(require('../package')).to.have.property('bin');
   });
   
-  xit("should accept a url as the first argument", function(done) {
-    var child = child_process.spawn('node', [binPath, 'https://github.com/resources/clone.io']);
-    child.on('exit', function(code) {
-      expect(code).to.equal(0);
+  it("should accept a url as the first argument", function(done) {
+    runCloneio(['https://github.com/resources/clone.io'], function(code, output) {
+      expect(output.combined).to.not.match(/usage/i);
       done();
     });
   });
