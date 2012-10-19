@@ -60,7 +60,7 @@ https://api.github.com/repos/resources/clone.io#/description
 
 Now that you know what is going to change, you can patch it on the server:
 
-```
+``` bash
 $ clone.io clone.io.json patch
 Patching https://api.github.com/repos/resources/clone.io...
 Enter GitHub username:
