@@ -29,7 +29,7 @@ describe('cli', function() {
     })
   });
 
-  xit("should print a usage message when no argument is given", function(done) {
+  it("should print a usage message when no argument is given", function(done) {
     var child = child_process.spawn('node', [binPath, 'https://github.com/resources/clone.io']);
     child.on('exit', function(code) {
       expect(code).to.match(/usage/i);
