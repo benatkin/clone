@@ -29,16 +29,45 @@ clone.io.json
 Note that the command appears after the resource. This makes it easy
 to perform a different command on the same resource.
 
-## getting an updated copy
+## viewing information about a resource
 
 The first argument can either be a URL or a file. The local file
 contains a link to the remote resource, so it can be used to perform
-actions involving both the local and remote resource. To update the
-local resource, call `get`:
+actions involving both the local and remote resource. 
+
+Running the command with just the name of the file:
+
+``` bash
+$ cd ~/Desktop
+$ clone.io clone.io.json
+```
+
+Will print out the following YAML:
+
+``` yaml
+url:  https://github.com/resources/clone.io
+type: /services/github/repo
+subresources:
+  - clone.io clone.io.json ./code get
+  - clone.io clone.io.json ./issues get
+  - clone.io clone.io.json ./wiki get
+  - clone.io clone.io.json get --all
+actions:
+  - clone.io clone.io.json get    # update clone.io.json
+  - clone.io clone.io.json diff   # compare local and remote resource
+  - clone.io clone.io.json patch  # patch remote resource with local updates
+  - clone.io clone.io.json show   # pretty-print the data
+```
+
+## getting an updated copy
+
+To update the local resource from the remote resource, call `get`:
 
 ``` bash
 $ clone.io clone.io.json get
 ```
+
+TODO: provide a tool or recommend a practice to preserve the old data.
 
 ## editing and patching
 
