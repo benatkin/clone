@@ -37,7 +37,7 @@ actions involving both the local and remote resource. To update the
 local resource, call `get`:
 
 ``` bash
-$ clone.io clone.io.json edit
+$ clone.io clone.io.json get
 ```
 
 ## editing and patching
