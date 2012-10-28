@@ -13,7 +13,7 @@ describe('resolve()', function() {
     expect(github.resolve('http://example.com/')).to.not.be.ok;
   });
 
-  xit('should return a match with the API url', function() {
+  it('should return a match with the API url', function() {
     expect(github.resolve(repoUrl)).to.have.property('url');
     expect(github.resolve(repoUrl).url).to.equal(apiUrl);
   });
