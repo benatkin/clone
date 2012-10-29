@@ -18,19 +18,27 @@ Clone a resource using its url. The JSON will be pretty-printed, and the informa
 
 ``` bash
 $ cd ~/Desktop
-$ clone.io https://github.com/resources/clone.io get
+$ clone.io https://github.com/resources/clone.io
+Getting https://api.github.com/repos/resources/clone.io.json...
+Cloning https://github.com/resources/clone.io.git
 $ ls -A1p
-clone.io.json
+clone.io
+$ ls -A1p clone.io
+.clone/
+code/
+index.json
+issues/
+wiki/
 ```
 
 Note that the command appears after the resource. This makes it easy to perform a different command on the same resource.
 
 ## getting an updated copy
 
-To update the local resource from the remote resource, call `get`:
+To update the local resource and subresources from the remote resource, call `pull`:
 
 ``` bash
-$ clone.io clone.io.json get
+$ clone.io pull
 ```
 
 # license
