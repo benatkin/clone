@@ -42,7 +42,17 @@ describe('cli', function() {
   
   it("should accept a url as the first argument", function(done) {
     runCloneio(['https://github.com/resources/clone.io'], function(code, output) {
+      expect(code).to.equal(0);
       expect(output.combined).to.not.match(/usage/i);
+      expect(output.combined).to.not.match(/not recognized/i);
+      done();
+    });
+  });
+  
+  it("should say so when a URL isn't recognized", function(done) {
+    runCloneio(['http://example.com/'], function(code, output) {
+      expect(code).to.not.equal(0);
+      expect(output.combined).to.match(/not recognized/i);
       done();
     });
   });
