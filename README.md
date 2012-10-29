@@ -18,12 +18,12 @@ Clone a resource using its url. The JSON will be pretty-printed, and the informa
 
 ``` bash
 $ cd ~/Desktop
-$ clone.io https://github.com/resources/clone.io
-Getting https://api.github.com/repos/resources/clone.io...
-Cloning https://github.com/resources/clone.io.git
+$ clone.io https://github.com/visionmedia/mocha
+Getting https://api.github.com/repos/visionmedia/mocha...
+Cloning https://github.com/visionmedia/mocha.git
 $ ls -A1p
-clone.io
-$ cd clone.io
+mocha
+$ cd mocha
 $ ls -A1p
 .clone/
 code/
@@ -38,9 +38,10 @@ To update the local resource and subresources from the remote resource, call `pu
 
 ``` bash
 $ clone.io pull
+(output here)
 ```
 
-## getting more stuff
+## getting more subresources
 
 ``` bash
 $ clone.io ls
@@ -49,9 +50,9 @@ $ clone.io ls
 ./issues
 ./wiki
 $ clone.io ./issues get
-Getting https://api.github.com/repos/resources/clone.io/issues...
+Getting https://api.github.com/repos/visionmedia/mocha/issues...
 $ clone.io ./wiki get
-Cloning https://github.com/resources/clone.io.wiki.git
+Cloning https://github.com/visionmedia/mocha.wiki.git
 $ ls -A1p
 .clone/
 code/
