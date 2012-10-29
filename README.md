@@ -19,16 +19,15 @@ Clone a resource using its url. The JSON will be pretty-printed, and the informa
 ``` bash
 $ cd ~/Desktop
 $ clone.io https://github.com/resources/clone.io
-Getting https://api.github.com/repos/resources/clone.io.json...
+Getting https://api.github.com/repos/resources/clone.io...
 Cloning https://github.com/resources/clone.io.git
 $ ls -A1p
 clone.io
-$ ls -A1p clone.io
+$ cd clone.io
+$ ls -A1p
 .clone/
 code/
 index.json
-issues/
-wiki/
 ```
 
 Note that the command appears after the resource. This makes it easy to perform a different command on the same resource.
@@ -39,6 +38,29 @@ To update the local resource and subresources from the remote resource, call `pu
 
 ``` bash
 $ clone.io pull
+```
+
+## getting more stuff
+
+``` bash
+$ clone.io ls
+./
+./code
+./issues
+./wiki
+$ clone.io ./issues get
+Getting https://api.github.com/repos/resources/clone.io/issues...
+$ clone.io ./wiki get
+Cloning https://github.com/resources/clone.io.wiki.git
+$ ls -A1p
+.clone/
+code/
+index.json
+issues/
+$ ls -A1p issues/ | head -n 3
+01.json
+02.json
+03.json
 ```
 
 # license
