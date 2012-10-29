@@ -14,10 +14,7 @@ $ npm install -g clone.io
 
 ## cloning a resource
 
-Clone a resource using its url. The JSON will be pretty-printed, and
-the information needed to update it will be added if it doesn't
-already exist. If it's a hypermedia API, like GitHub, the url in the
-original request will be used.
+Clone a resource using its url. The JSON will be pretty-printed, and the information needed to update it will be added if it doesn't already exist. If it's a hypermedia API, like GitHub, the url in the original request will be used.
 
 ``` bash
 $ cd ~/Desktop
@@ -26,8 +23,7 @@ $ ls -A1p
 clone.io.json
 ```
 
-Note that the command appears after the resource. This makes it easy
-to perform a different command on the same resource.
+Note that the command appears after the resource. This makes it easy to perform a different command on the same resource.
 
 ## getting an updated copy
 
